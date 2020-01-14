@@ -23,7 +23,8 @@ For this application, since mobile phones enjoy a high penetration rate in socie
 III.	BACKGROUND
 
 Selecting a technology stack
-![alt text](Images/1.gif "Bluetooth Stack")
+
+<img src="Images/1.gif" />
 
 Relying on the mobile phone provides access to the technology stacks of the cell phone provider, Wi-Fi and Bluetooth. The location information provided by the cell phone towers is accurate for localization in the city however indoor location information cannot be gathered accurately with this method. It will require a phone app that relays information to a server all the time relying on the user’s data plan which cannot be relied upon for this system and raises privacy concerns since the location data will always be shared irrespective of the current location of the user. 
 
@@ -35,12 +36,16 @@ Bluetooth Stack
 Introduction to Bluetooth Protocol Stack
 
 Link Layer – Bluetooth Address
-	Every Bluetooth device has a unique identifier similar to the Media Access Control (MAC) address in the TCP/IP paradigm known as the device address or Bluetooth Address. This is a globally unique 48-bit address and the address spaces are managed by the IEEE Registration Authority.  
-	This Bluetooth address is used by all the layers of the Bluetooth communication process as opposed to each layer having a different identifier. The device can also have a human readable name associated to it that is user defined, however that name is only used in the device discovery phase of the communication process. Once the devices have been paired, all communication between devices uses the Bluetooth address. 
-Device Discovery
-	Bluetooth devices organize into small PANs called Piconets. Each Piconet consists of a master and 7 slave devices where all devices follow a synchronized frequency hopping pattern. The Piconet formation consists of two steps: inquiry process and page process. 
 
-	The inquiry process can be executed by an inquiring device (a host device looking for clients) or a scanning device (client device looking to be discovered). In the discovery mode, the inquiry device will broadcast an advertising packet on each of 32 radio channels. This advertising packet contains information about the peripheral’s name, Bluetooth address and primary function [5]. The entire list of functions can only be communicated after the pairing is complete and will be discussed under the Service Discovery Protocol section. The device sends the inquiry message on a channel followed by a second channel, it scans the channels in the same order for a response before moving to the next pair. The inquiry procedure does this for two sets of 16 channels each and sleeps between the two. The process continues until a specified number of devices are discovered or a timer runs out. [6]
+Every Bluetooth device has a unique identifier similar to the Media Access Control (MAC) address in the TCP/IP paradigm known as the device address or Bluetooth Address. This is a globally unique 48-bit address and the address spaces are managed by the IEEE Registration Authority.  
+	
+This Bluetooth address is used by all the layers of the Bluetooth communication process as opposed to each layer having a different identifier. The device can also have a human readable name associated to it that is user defined, however that name is only used in the device discovery phase of the communication process. Once the devices have been paired, all communication between devices uses the Bluetooth address. 
+
+Device Discovery
+
+Bluetooth devices organize into small PANs called Piconets. Each Piconet consists of a master and 7 slave devices where all devices follow a synchronized frequency hopping pattern. The Piconet formation consists of two steps: inquiry process and page process. 
+
+The inquiry process can be executed by an inquiring device (a host device looking for clients) or a scanning device (client device looking to be discovered). In the discovery mode, the inquiry device will broadcast an advertising packet on each of 32 radio channels. This advertising packet contains information about the peripheral’s name, Bluetooth address and primary function [5]. The entire list of functions can only be communicated after the pairing is complete and will be discussed under the Service Discovery Protocol section. The device sends the inquiry message on a channel followed by a second channel, it scans the channels in the same order for a response before moving to the next pair. The inquiry procedure does this for two sets of 16 channels each and sleeps between the two. The process continues until a specified number of devices are discovered or a timer runs out. [6]
 Scanning devices that want to be discovered are in the inquiry scan sub-state and scan for the aforementioned inquiry packets. The channel hopping rate of these devices is much lower than that of the inquiry device in order to ensure that there is an overlap between the inquiry device and scanning device channels. On successfully receiving the inquiry, the scanning device will move to the inquiry response sub-state, wait for two time slots before sending an inquiry response. The response follows a random delay to minimize the chance of response collisions when multiple devices respond. The result of this protocol is that an inquiry must run for 10.24s to reliably detect all devices in range. 
 
 Transport Layer Protocols
