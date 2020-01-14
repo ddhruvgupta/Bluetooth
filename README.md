@@ -23,6 +23,7 @@ For this application, since mobile phones enjoy a high penetration rate in socie
 III.	BACKGROUND
 
 Selecting a technology stack
+![alt text](https://github.com/ddhruvgupta/Bluetooth/edit/master/images/1.gif "Bluetooth Stack")
 
 Relying on the mobile phone provides access to the technology stacks of the cell phone provider, Wi-Fi and Bluetooth. The location information provided by the cell phone towers is accurate for localization in the city however indoor location information cannot be gathered accurately with this method. It will require a phone app that relays information to a server all the time relying on the user’s data plan which cannot be relied upon for this system and raises privacy concerns since the location data will always be shared irrespective of the current location of the user. 
 
