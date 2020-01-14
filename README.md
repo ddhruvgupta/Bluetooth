@@ -39,8 +39,8 @@ Link Layer – Bluetooth Address
 
 Every Bluetooth device has a unique identifier similar to the Media Access Control (MAC) address in the TCP/IP paradigm known as the device address or Bluetooth Address. This is a globally unique 48-bit address and the address spaces are managed by the IEEE Registration Authority.  
 
-<img src="Images/2.png" />
-<img src="Images/3.png" />
+<img src="Images/2.png" width= 25% height= 25%/>
+<img src="Images/3.png" width= 25% height= 25%/ >
 
 This Bluetooth address is used by all the layers of the Bluetooth communication process as opposed to each layer having a different identifier. The device can also have a human readable name associated to it that is user defined, however that name is only used in the device discovery phase of the communication process. Once the devices have been paired, all communication between devices uses the Bluetooth address. 
 
