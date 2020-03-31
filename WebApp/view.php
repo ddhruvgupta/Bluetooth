@@ -1,6 +1,11 @@
 <?php 
+session_start();
+include "./utils/connection.php";
 
-include "connection.php";
+  if(!isset($_SESSION['success'])){
+    header("location: ./utils/login.php");
+    return;
+  }
 
 $sql = "Select device.sno,device.fname,device.lname,device.mac,device.email, max(ca.availability) as availability, ca.last_modified 
 from current_availability ca join device on device.mac = ca.mac

@@ -1,10 +1,26 @@
 <?php 
 
-include "connection.php";
+session_start();
 
-$sql = "Select * from device";
+  if(!isset($_SESSION['success'])){
+    header("location: ./utils/login.php");
+    return;
+  }
+
+include "./utils/connection.php";
+
+
+if($_SESSION['role'] == 'admin'){
+  $sql = "Select * from device";
+}elseif($_SESSION['role'] == 'faculty'){
+  $sql = "Select * from device where email = :email";
+}else{
+    header("location: index.php");
+    return;
+}
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute(array(':email' => $_SESSION['email'] ));
 
 
 $table = "<table width='100%' class='table table-striped table-bordered table-hover' id='term-view'>";
@@ -72,7 +88,10 @@ if(isset($_POST['delete'])){
 	<div class="container">
 		<p><center><h1>View Device List</h1></center></p>
     <br>
-		<?php echo $table; ?>
+		<?php 
+    echo $table; 
+    echo("<a href='utils/logout.php'>LOGOUT</a>");
+    ?>
 	</div>
 </body>
 

@@ -1,8 +1,8 @@
 <?php 
 session_start();
-include "connection.php";
-include "flashMessages.php";
-include "bootstrap.php";
+include "utils/connection.php";
+include "utils/flashMessages.php";
+include "utils/bootstrap.php";
 
 
 function validateMac($mac)
