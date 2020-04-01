@@ -1,10 +1,14 @@
 <?php
 
+// session_start();
+
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
 
 function emailVerify($email, $hash){
+
+
 
 	require_once('C:\xampp\htdocs\projects\bluetooth\PHPMailer\PHPMailer.php');
 	require_once('C:\xampp\htdocs\projects\bluetooth\PHPMailer\SMTP.php');
