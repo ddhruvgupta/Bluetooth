@@ -10,9 +10,9 @@ function emailVerify($email, $hash){
 
 
 
-	require_once($_SESSION['root'].'\PHPMailer\PHPMailer.php');
-	require_once($_SESSION['root'].'\PHPMailer\SMTP.php');
-	require_once($_SESSION['root'].'\PHPMailer\Exception.php');
+	require_once('../PHPMailer/PHPMailer.php');
+	require_once('../PHPMailer/SMTP.php');
+	require_once('../PHPMailer/Exception.php');
 
 
 
