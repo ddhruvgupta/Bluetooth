@@ -38,7 +38,7 @@ $mail->Username = "bluetooth.project.test@gmail.com";
 $mail->Password = "Welcome1234!";
 $mail->Subject = "Account Verification";
 $mail->setFrom("bluetooth.project.test@gmail.com");
-$mail->Body = ($_SESSION['root']."/utils/verify?key=".$hash."&email=".$email);
+$mail->Body = ($_SESSION['root']."/utils/verify.php?key=".$hash."&email=".$email);
 $mail->addAddress($email);
 
 if ($mail->Send()){
