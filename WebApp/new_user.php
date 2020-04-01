@@ -10,7 +10,7 @@ include "./utils/emailVerification.php";
   //If insert if successful
 
 if(isset($_POST['cancel'])){
-  header("location:index.php");
+  header("location: index.php");
   return;
 }
 
@@ -29,11 +29,11 @@ if(isset($_POST['add']) ){
 
   if($role == "invalid"){
     
-    header("location: new_user.php");
+    header("location: ./new_user.php");
     return;
   }
 
-
+  emailVerify($email, $hash);
 
   
   $statement = $pdo->prepare($sql);
@@ -49,7 +49,7 @@ if(isset($_POST['add']) ){
   );
 
   $_SESSION['insert'] = "New User Successfully Created - Please verify by Email";
-  emailVerify($email, $hash);
+  
   header("location: new_user.php");
   return;
 
