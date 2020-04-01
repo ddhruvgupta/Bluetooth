@@ -2,17 +2,19 @@
 
 // session_start();
 
+	require_once('C:\xampp\htdocs\projects\bluetooth\PHPMailer\PHPMailer.php');
+	require_once('C:\xampp\htdocs\projects\bluetooth\PHPMailer\SMTP.php');
+	require_once('C:\xampp\htdocs\projects\bluetooth\PHPMailer\Exception.php');
+
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
 
-function emailVerify($email, $hash){
 
 
 
-	require_once($_SESSION['root'].'\PHPMailer\PHPMailer.php');
-	require_once($_SESSION['root'].'\PHPMailer\SMTP.php');
-	require_once($_SESSION['root'].'\PHPMailer\Exception.php');
+
+
 
 
 
@@ -39,7 +41,8 @@ $mail->Username = "bluetooth.project.test@gmail.com";
 $mail->Password = "Welcome1234!";
 $mail->Subject = "Account Verification";
 $mail->setFrom("bluetooth.project.test@gmail.com");
-$mail->Body = ($_SESSION['root']."/utils/verify?key=".$hash."&email=".$email);
+// $mail->Body = ($_SESSION['root']."/utils/verify?key=".$hash."&email=".$email);
+$mail->Body ="test";
 $mail->addAddress($email);
 
 if ($mail->Send()){
@@ -57,7 +60,7 @@ $mail->smtpClose();
 }
 
 
-}
+
 
 
 ?>
