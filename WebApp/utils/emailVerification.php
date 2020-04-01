@@ -17,7 +17,7 @@ echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n";
 $mail = new PHPMailer(true);
 
 try{
-// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->SMTPOptions = array(
                   'ssl' => array(
                       'verify_peer' => false,
