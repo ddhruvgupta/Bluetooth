@@ -2,18 +2,13 @@
 
 // session_start();
 
-	require_once('bluetooth-env-test.eba-brqgvwur.us-east-2.elasticbeanstalk.com/WebApp/PHPMailer/PHPMailer.php');
-	require_once('bluetooth-env-test.eba-brqgvwur.us-east-2.elasticbeanstalk.com/WebApp/PHPMailer/SMTP.php');
-	require_once('bluetooth-env-test.eba-brqgvwur.us-east-2.elasticbeanstalk.com/WebApp/PHPMailer/Exception.php');
+	require_once('../PHPMailer/PHPMailer.php');
+	require_once('../PHPMailer/SMTP.php');
+	require_once('../PHPMailer/Exception.php');
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
-
-
-
-
-
 
 
 
