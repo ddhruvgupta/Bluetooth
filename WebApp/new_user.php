@@ -33,7 +33,7 @@ if(isset($_POST['add']) ){
     return;
   }
 
-  emailVerify($email, $hash);
+  error_log(emailVerify($email, $hash));
 
   
   $statement = $pdo->prepare($sql);
