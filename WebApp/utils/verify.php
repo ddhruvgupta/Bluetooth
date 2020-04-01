@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include "connection.php";
 
 if (isset($_GET['key']) && isset($_GET['email'])){
@@ -21,8 +21,8 @@ if (isset($_GET['key']) && isset($_GET['email'])){
 	}
 
 }else{
-	echo "string";
-	echo "<script>window.close();</script>";
+	echo "LINK VERIFICATION PAGE";
+	// echo "<script>window.close();</script>";
 }
 
 ?>
