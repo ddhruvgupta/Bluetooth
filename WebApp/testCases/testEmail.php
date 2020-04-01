@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-if($_SERVER['HTTP_HOST'] == "localhost"){
+try{
+	if($_SERVER['HTTP_HOST'] == "localhost"){
 	$_SESSION['root'] =  $_SERVER['HTTP_HOST']."/projects/bluetooth";
 }else{
 	$_SESSION['root'] =  $_SERVER['HTTP_HOST']."/WebApp";
@@ -11,5 +12,10 @@ if($_SERVER['HTTP_HOST'] == "localhost"){
 
 include "../utils/emailVerification.php";
 emailVerify("bluetooth.project.test@gmail.com", 1);
+}catch(Exception $e) {
+    $errors[] = $e->getMessage(); //Boring error messages from anything else!
+    print_r($errors);
+}
+
 
 ?>
